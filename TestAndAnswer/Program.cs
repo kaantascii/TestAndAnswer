@@ -3,48 +3,75 @@
 class soruCevap
 {
     static void Main(string[] args)
-    {   // İlk Soru
-        Console.WriteLine("Soru: Hangi hayvan uçar?");
+    {
+        int dogruSayisi = 0;
+
+        // İlk Soru
+        Console.WriteLine("1.Soru: Hangi hayvan uçar?");
         Console.WriteLine("A) Kedi");
         Console.WriteLine("B) Kartal");
-       
-        string cevap = Console.ReadLine();
-        if (cevap.ToUpper() == "B")
+        Console.Write("Cevabınız: ");
+
+        string cevap1 = Console.ReadLine().ToUpper();
+        if (cevap1 == "B")
         {
+            dogruSayisi++;
             Console.WriteLine("Doğru cevap!");
         }
         else
         {
             Console.WriteLine("Yanlış cevap. Doğru cevap B) Kartal.");
         }
-        //İkinci Soru
-        Console.WriteLine("Soru: Hangi hayvan yüzebilir?");
-        Console.WriteLine("A) Balık");
-        Console.WriteLine("B) Aslan");
 
-        cevap = Console.ReadLine();
-        if (cevap.ToUpper() == "A")
+        // İkinci Soru
+        if (dogruSayisi < 2)
         {
-            Console.WriteLine("Doğru cevap!");
+            Console.WriteLine("\n2.Soru: Hangi hayvan yüzebilir?");
+            Console.WriteLine("A) Balık");
+            Console.WriteLine("B) Aslan");
+            Console.Write("Cevabınız: ");
+            string cevap2 = Console.ReadLine().ToUpper();
+
+            if (cevap2 == "A")
+            {
+                dogruSayisi++;
+                Console.WriteLine("Doğru cevap!");
+            }
+            else
+            {
+                Console.WriteLine("Yanlış cevap. Doğru cevap A) Balık.");
+            }
         }
-        else
-        {
-            Console.WriteLine("Yanlış cevap. Doğru cevap A) Balık.");
-        }
+
         // Üçüncü Soru
-        Console.WriteLine("Soru: Hangi hayvan yürüyebilir?");
-        Console.WriteLine("A) Yılan");
-        Console.WriteLine("B) Fil");
-        cevap = Console.ReadLine();
-        if (cevap.ToUpper() == "B")
+        if (dogruSayisi < 2)
         {
-            Console.WriteLine("Doğru cevap!");
+            Console.WriteLine("\n3.Soru: Hangi hayvan yürüyebilir?");
+            Console.WriteLine("A) Yılan");
+            Console.WriteLine("B) Fil");
+            Console.Write("Cevabınız: ");
+            string cevap3 = Console.ReadLine().ToUpper();
+
+            if (cevap3 == "B")
+            {
+                dogruSayisi++;
+                Console.WriteLine("Doğru cevap!");
+            }
+            else
+            {
+                Console.WriteLine("Yanlış cevap. Doğru cevap B) Fil.");
+            }
+        }
+
+        // Sonuç
+        Console.WriteLine("\n--- Yarışma Sonucu ---");
+        if (dogruSayisi >= 2)
+        {
+            Console.WriteLine("Tebrikler! 1 Milyon TL'lik büyük ödülü kazandınız!");
         }
         else
         {
-            Console.WriteLine("Yanlış cevap. Doğru cevap B) Fil.");
+            Console.WriteLine("Maalesef büyük ödülü kazanamadınız. Daha iyi şanslar!");
         }
-
-
     }
 }
